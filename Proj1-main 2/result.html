@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Result Page</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="./result.css">
+  <link rel="stylesheet" href="./styles.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <header class="bg-black ">
+    <nav class="navbar navbar-expand-lg navbar-light transprant_header">
+      <div class="container">
+        <!-- Navbar brand -->
+        <a class="navbar-brand brand-img" href="/"><img src="./image/11 buddy logo-PhotoRoom.png-PhotoRoom_edited.png"
+            width="70" height="80"></a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+          aria-controls="basicExampleNav" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="navbar-collapse collapse" id="basicExampleNav">
+
+          <!-- Links -->
+          <ul class="navbar-nav ml-auto nev_left">
+
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html#aboutus_section">About us</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html#how_to_play_section">How to Play</a>
+            </li>
+
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html#faq_section">FAQ's</a>
+            </li>
+            <li class="nav-item">
+              <a class="download-btn download for iOS" href="https://app.vision11.in/Vision11.apk">Download
+                App</a>
+            </li>
+          </ul>
+          <!-- Links -->
+
+        </div>
+        <!-- Collapsible content -->
+      </div>
+    </nav>
+  </header>
+
+  <section class="page_title">
+    <div class="container">
+      <h1 id="head"></h1>
+    </div>
+  </section>
+
+  <div class="container information pt-5" id="bdy">
+  </div>
+
+
+
+  <script>
+    // Get the data from the URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const data = urlParams.get('data');
+
+    const d = JSON.parse(data);
+    // console.log(d);
+
+    document.getElementById("head").textContent = d.name;
+    document.getElementById("bdy").innerHTML = `${d.policy}`;
+
+  </script>
+
+</body>
+
+</html>
